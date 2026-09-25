@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06100b">
+<meta name="description" content="Fely e Amigos — Formações e Explicações aos finais de semana no Colégio Ramo Verde.">
+<title>Fely e Amigos | Formação & Explicações</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#030605;
+  --black2:#08100c;
+  --green:#063a27;
+  --green2:#08734a;
+  --green3:#0e9862;
+  --gold:#c99520;
+  --gold2:#f4d36b;
+  --gold3:#ffe7a0;
+  --white:#fff;
+  --muted:#bdc9c2;
+  --line:rgba(244,211,107,.24);
+  --shadow:0 25px 70px rgba(0,0,0,.48);
+  --radius:26px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 8% 3%,rgba(8,115,74,.20),transparent 27%),
+    radial-gradient(circle at 92% 18%,rgba(201,149,32,.13),transparent 25%),
+    var(--black);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+body:after{
+  content:"";
+  position:fixed;
+  width:420px;height:420px;
+  left:-210px;top:35%;
+  border-radius:50%;
+  background:rgba(8,115,74,.07);
+  filter:blur(80px);
+  pointer-events:none;
+  z-index:-1;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+/* TOP BAR */
+.topbar{
+  padding:9px 15px;
+  text-align:center;
+  background:linear-gradient(90deg,#04130b,#075b3a,#04130b);
+  border-bottom:1px solid rgba(244,211,107,.15);
+  color:#dce6e0;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.6px;
+}
+.topbar b{color:var(--gold2)}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(3,6,5,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(244,211,107,.13);
+}
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  border-radius:15px;
+}
+.brand strong{
+  display:block;
+  font-family:"Montserrat";
+  font-size:18px;
+  font-weight:900;
+}
+.brand small{
+  display:block;
+  color:var(--gold2);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.7px;
+  margin-top:3px;
+}
+nav{
+  display:flex;
+  align-items:center;
+  gap:23px;
+}
+nav a{
+  color:#e5ece7;
+  font-size:13px;
+  font-weight:700;
+  transition:.25s;
+}
+nav a:hover{color:var(--gold2)}
+.nav-cta{
+  padding:11px 18px;
+  color:#10100b!important;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  border-radius:999px;
+}
+
+/* HERO */
+.hero{
+  min-height:760px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:80px 0 120px;
+  background:
+    linear-gradient(90deg,rgba(2,6,4,.98) 0%,rgba(2,6,4,.91) 34%,rgba(2,6,4,.53) 68%,rgba(2,6,4,.74) 100%),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1900&q=90") center/cover;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:800px;
+  height:800px;
+  right:-350px;
+  top:-400px;
+  border-radius:50%;
+  border:1px solid rgba(244,211,107,.15);
+  box-shadow:0 0 0 80px rgba(244,211,107,.025),0 0 0 160px rgba(244,211,107,.018);
+}
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  gap:60px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  padding:9px 15px;
+  border:1px solid rgba(244,211,107,.32);
+  border-radius:999px;
+  color:var(--gold2);
+  background:rgba(0,0,0,.32);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+h1{
+  font-family:"Montserrat";
+  font-size:clamp(43px,6.2vw,78px);
+  line-height:.98;
+  letter-spacing:-3.5px;
+  margin:24px 0;
+}
+h1 em{
+  color:var(--gold2);
+  font-family:"Playfair Display";
+  font-style:italic;
+  font-weight:700;
+}
+.hero-copy{
+  max-width:670px;
+  color:#dbe4df;
+  font-size:18px;
+  line-height:1.75;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:30px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 22px;
+  border-radius:14px;
+  font-weight:900;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{
+  color:#111;
+  background:linear-gradient(135deg,var(--gold3),var(--gold2),var(--gold));
+  box-shadow:0 14px 38px rgba(201,149,32,.20);
+}
+.btn-outline{
+  border:1px solid rgba(255,255,255,.19);
+  background:rgba(255,255,255,.045);
+}
+.hero-card{
+  width:min(445px,100%);
+  justify-self:end;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:rgba(4,13,8,.60);
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);
+}
+.hero-card-image{
+  height:475px;
+  overflow:hidden;
+  border-radius:23px;
+  position:relative;
+}
+.hero-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-card-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 50%,rgba(0,0,0,.55));
+}
+.hero-badge{
+  position:relative;
+  margin:-38px 18px 8px;
+  z-index:3;
+  padding:19px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#073b28,#07110c);
+  border:1px solid var(--line);
+}
+.hero-badge strong{
+  display:block;
+  color:var(--gold2);
+  font-family:"Montserrat";
+  font-size:19px;
+}
+.hero-badge small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* HIGHLIGHTS */
+.highlights{
+  position:relative;
+  z-index:5;
+  margin-top:-55px;
+}
+.highlight-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(110deg,#082016,#0b412c);
+  box-shadow:var(--shadow);
+}
+.highlight{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:23px;
+  border-right:1px solid rgba(244,211,107,.15);
+}
+.highlight:last-child{border:0}
+.highlight-icon{
+  width:49px;
+  height:49px;
+  flex:0 0 49px;
+  display:grid;
+  place-items:center;
+  color:#111;
+  border-radius:15px;
+  background:linear-gradient(135deg,var(--gold3),var(--gold));
+}
+.highlight-icon svg{width:23px;height:23px}
+.highlight strong{font-size:14px}
+.highlight small{
+  display:block;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+/* SECTIONS */
+section{padding:100px 0}
+.section-head{
+  max-width:780px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+.tag{
+  color:var(--gold2);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.section-head h2{
+  margin:12px 0;
+  font-family:"Montserrat";
+  font-size:clamp(31px,4vw,48px);
+  letter-spacing:-1.5px;
+}
+.section-head p{
+  color:var(--muted);
+  line-height:1.75;
+}
+
+/* COURSES */
+.courses{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.course{
+  min-height:500px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(244,211,107,.18);
+  border-radius:var(--radius);
+  background:#08100c;
+  box-shadow:0 16px 45px rgba(0,0,0,.24);
+  transition:.3s;
+}
+.course:hover{
+  transform:translateY(-8px);
+  border-color:rgba(244,211,107,.52);
+}
+.course-media{
+  height:220px;
+  position:relative;
+  overflow:hidden;
+}
+.course-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+.course:hover .course-media img{transform:scale(1.07)}
+.course-media:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 18%,rgba(0,0,0,.91));
+}
+.course-label{
+  position:absolute;
+  left:18px;
+  bottom:17px;
+  z-index:2;
+  padding:8px 11px;
+  border-radius:10px;
+  color:var(--gold2);
+  background:rgba(4,9,6,.84);
+  border:1px solid rgba(244,211,107,.34);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+.course-body{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:23px;
+}
+.course h3{
+  font-family:"Montserrat";
+  font-size:20px;
+  line-height:1.17;
+}
+.course p{
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.6;
+  margin:12px 0 18px;
+}
+.details{margin-top:auto}
+.detail{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+  font-size:13px;
+}
+.detail span{color:var(--muted)}
+.price{color:var(--gold2)}
+.cert{color:#dceee3}
+.course-btn{
+  display:block;
+  margin-top:16px;
+  padding:12px;
+  text-align:center;
+  color:var(--gold2);
+  background:rgba(217,167,45,.08);
+  border:1px solid rgba(244,211,107,.20);
+  border-radius:12px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* EXPLICAÇÕES */
+.explain{
+  background:
+    linear-gradient(90deg,rgba(3,6,5,.98),rgba(3,6,5,.78)),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1900&q=88") center/cover fixed;
+}
+.explain-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+.visual{
+  position:relative;
+  padding:12px;
+  border-radius:30px;
+  border:1px solid var(--line);
+  background:rgba(7,61,42,.34);
+  box-shadow:var(--shadow);
+}
+.visual img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  border-radius:22px;
+}
+.visual-badge{
+  position:absolute;
+  right:-17px;
+  bottom:30px;
+  width:230px;
+  padding:19px;
+  border-radius:20px;
+  background:#07110c;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.visual-badge strong{
+  color:var(--gold2);
+  font-family:"Montserrat";
+}
+.visual-badge p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.explain-list{
+  display:grid;
+  gap:14px;
+  margin-top:25px;
+}
+.explain-item{
+  display:flex;
+  gap:14px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  background:rgba(255,255,255,.035);
+}
+.check{
+  color:var(--gold2);
+  font-size:20px;
+  font-weight:900;
+}
+.explain-item strong{font-family:"Montserrat"}
+.explain-item p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+  margin-top:4px;
+}
+
+/* MATERIALS */
+.materials{
+  background:
+    linear-gradient(135deg,rgba(3,15,9,.97),rgba(3,15,9,.84)),
+    url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1800&q=88") center/cover;
+}
+.material-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.material-card{
+  min-height:270px;
+  position:relative;
+  overflow:hidden;
+  padding:30px;
+  border:1px solid rgba(244,211,107,.18);
+  border-radius:24px;
+  background:linear-gradient(160deg,rgba(7,61,42,.76),rgba(5,7,6,.85));
+}
+.material-card:after{
+  content:"PDF";
+  position:absolute;
+  right:-8px;
+  top:5px;
+  color:rgba(244,211,107,.06);
+  font-family:"Montserrat";
+  font-size:72px;
+  font-weight:900;
+}
+.material-visual{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  color:var(--gold2);
+  background:rgba(244,211,107,.10);
+  border:1px solid rgba(244,211,107,.17);
+}
+.material-visual svg{width:28px;height:28px}
+.material-card h3{
+  margin:18px 0 8px;
+  font-family:"Montserrat";
+  font-size:20px;
+}
+.material-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+.material-card b{
+  display:inline-block;
+  margin-top:16px;
+  color:var(--gold2);
+  font-size:13px;
+}
+
+/* WHY */
+.why{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.why-card{
+  padding:27px 21px;
+  border:1px solid rgba(244,211,107,.14);
+  border-radius:22px;
+  background:linear-gradient(160deg,#0b2117,#080d0a);
+}
+.why-icon{
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  color:var(--gold2);
+  background:rgba(244,211,107,.09);
+  border:1px solid rgba(244,211,107,.14);
+}
+.why-icon svg{width:24px;height:24px}
+.why-card h3{
+  margin:14px 0 8px;
+  font-family:"Montserrat";
+  font-size:16px;
+}
+.why-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* CTA */
+.cta{padding-top:20px}
+.cta-box{
+  position:relative;
+  overflow:hidden;
+  padding:62px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:
+    linear-gradient(90deg,rgba(4,21,14,.96),rgba(7,61,42,.76)),
+    url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=88") center/cover;
+}
+.cta-box:before{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  right:-90px;bottom:-120px;
+  border-radius:50%;
+  border:1px solid rgba(244,211,107,.22);
+  box-shadow:0 0 0 45px rgba(244,211,107,.03),0 0 0 90px rgba(244,211,107,.02);
+}
+.cta-box h2{
+  max-width:720px;
+  font-family:"Montserrat";
+  font-size:clamp(30px,4vw,50px);
+}
+.cta-box p{
+  max-width:720px;
+  margin:14px 0 25px;
+  color:#d7e1db;
+  line-height:1.7;
+}
+
+/* CONTACT */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.contact-card{
+  padding:29px;
+  border:1px solid rgba(244,211,107,.17);
+  border-radius:25px;
+  background:#09110d;
+}
+.contact-card h3{
+  margin-bottom:17px;
+  font-family:"Montserrat";
+  font-size:21px;
+}
+.contact-row{
+  display:flex;
+  gap:13px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.contact-row:last-child{border:0}
+.contact-icon{
+  width:43px;
+  height:43px;
+  flex:0 0 43px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  color:var(--gold2);
+  background:rgba(217,167,45,.11);
+}
+.contact-icon svg{width:21px;height:21px}
+.contact-row b{display:block}
+.contact-row span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
+}
+.whatsapp-number{
+  color:var(--gold2)!important;
+  font-size:17px!important;
+  font-weight:900;
+}
+
+/* FOOTER */
+footer{
+  padding:38px 0;
+  background:#030504;
+  border-top:1px solid rgba(244,211,107,.13);
+}
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.footer small{color:#9daaa2}
+.gold{color:var(--gold2)}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  nav{display:none}
+  .hero-grid,.explain-grid{grid-template-columns:1fr}
+  .hero-card{justify-self:start;max-width:480px}
+  .courses{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .container{width:94%}
+  .topbar{font-size:9px}
+  .brand img{width:45px;height:45px}
+  .brand strong{font-size:15px}
+  .brand small{font-size:8px}
+  .hero{min-height:auto;padding:65px 0 105px}
+  h1{letter-spacing:-2px}
+  .hero-copy{font-size:15px}
+  .hero-card-image{height:350px}
+  .highlight-grid,.courses,.material-grid,.contact{grid-template-columns:1fr}
+  .highlight{border-right:0;border-bottom:1px solid rgba(244,211,107,.14)}
+  .highlight:last-child{border-bottom:0}
+  .course{min-height:450px}
+  .why{grid-template-columns:1fr}
+  section{padding:75px 0}
+  .cta-box{padding:38px 24px}
+  .visual-badge{right:8px;width:205px}
+  .footer{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <b>FELY E AMIGOS</b> — Formação e Explicações aos finais de semana no <b>Colégio Ramo Verde</b>
+</div>
+
+<header>
+  <div class="container nav">
+
+    <a class="brand" href="#inicio">
+      <img src="logo-principal.jpg" alt="Logotipo Fely e Amigos">
+      <div>
+        <strong>Fely e Amigos</strong>
+        <small>FORMAÇÃO & EXPLICAÇÕES</small>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#formacoes">Formações</a>
+      <a href="#explicacoes">Explicações</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#contacto" class="nav-cta">Inscrições</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">Finais de semana · Colégio Ramo Verde</div>
+
+      <h1>
+        Aprenda hoje.<br>
+        <em>Prepare o seu futuro.</em>
+      </h1>
+
+      <p class="hero-copy">
+        Formações práticas e explicações de qualidade para quem deseja
+        desenvolver competências, melhorar o desempenho escolar e criar
+        novas oportunidades através da educação.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#formacoes">Conhecer formações</a>
+        <a class="btn btn-outline" href="#contacto">Fazer inscrição</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-image">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=90"
+          alt="Estudantes em ambiente de aprendizagem"
+          loading="eager">
+      </div>
+
+      <div class="hero-badge">
+        <strong>Conhecimento que abre portas.</strong>
+        <small>Formações e explicações aos finais de semana.</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DESTAQUES -->
+<div class="container highlights">
+  <div class="highlight-grid">
+
+    <div class="highlight">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 10.5 12 5l9 5.5-9 5-9-5Z"/><path d="M7 13v4.5c2.8 2.2 9.2 2.2 12 0V13"/><path d="M21 10.5v6"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Formações práticas</strong>
+        <small>Conhecimentos para aplicar</small>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/>
+          <path d="M4 19c0-1.1.9-2 2-2h14"/><path d="M8 7h8M8 11h8"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Explicações</strong>
+        <small>Acompanhamento e aperfeiçoamento</small>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 21s7-5.3 7-11A7 7 0 0 0 5 10c0 5.7 7 11 7 11Z"/>
+          <circle cx="12" cy="10" r="2.2"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Colégio Ramo Verde</strong>
+        <small>Aulas aos finais de semana</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FORMAÇÕES -->
+<section id="formacoes">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="tag">Invista no seu conhecimento</span>
+      <h2>Formações profissionais</h2>
+      <p>
+        Cursos organizados para desenvolver conhecimentos úteis,
+        competências práticas e novas possibilidades de crescimento.
+      </p>
+    </div>
+
+    <div class="courses">
+
+      <article class="course">
+        <div class="course-media">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=90" alt="Pedagogia e educação" loading="lazy">
+          <span class="course-label">Educação</span>
+        </div>
+        <div class="course-body">
+          <h3>Noções Gerais de Pedagogia</h3>
+          <p>
+            Bases essenciais sobre educação, aprendizagem, prática pedagógica,
+            relação professor-aluno e atuação educativa.
+          </p>
+          <div class="details">
+            <div class="detail"><span>Duração</span><b>2 meses</b></div>
+            <div class="detail"><span>Formação</span><b class="price">10.000 Kz</b></div>
+            <div class="detail"><span>Certificado</span><b class="cert">+ 5.000 Kz</b></div>
+          </div>
+          <a class="course-btn" href="#contacto">Solicitar inscrição</a>
+        </div>
+      </article>
+
+      <article class="course">
+        <div class="course-media">
+          <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=90" alt="Aprendizagem de inglês" loading="lazy">
+          <span class="course-label">Idiomas</span>
+        </div>
+        <div class="course-body">
+          <h3>Inglês</h3>
+          <p>
+            Desenvolvimento de vocabulário, compreensão, comunicação e bases
+            gramaticais para situações do dia a dia.
+          </p>
+          <div class="details">
+            <div class="detail"><span>Modalidade</span><b>Mensal</b></div>
+            <div class="detail"><span>Mensalidade</span><b class="price">4.000 Kz/mês</b></div>
+          </div>
+          <a class="course-btn" href="#contacto">Solicitar inscrição</a>
+        </div>
+      </article>
+
+      <article class="course">
+        <div class="course-media">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=90" alt="Operador de caixa" loading="lazy">
+          <span class="course-label">Comércio</span>
+        </div>
+        <div class="course-body">
+          <h3>Noções Básicas de Operador de Caixa</h3>
+          <p>
+            Noções essenciais de atendimento, operações de caixa, controlo
+            de vendas e rotina comercial.
+          </p>
+          <div class="details">
+            <div class="detail"><span>Duração</span><b>2 meses</b></div>
+            <div class="detail"><span>Formação</span><b class="price">10.000 Kz</b></div>
+            <div class="detail"><span>Certificado</span><b class="cert">+ 5.000 Kz</b></div>
+          </div>
+          <a class="course-btn" href="#contacto">Solicitar inscrição</a>
+        </div>
+      </article>
+
+      <article class="course">
+        <div class="course-media">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=90" alt="Manicure e pedicure" loading="lazy">
+          <span class="course-label">Estética</span>
+        </div>
+        <div class="course-body">
+          <h3>Estética — Manicure e Pedicure</h3>
+          <p>
+            Conhecimentos práticos de cuidados, preparação, técnicas básicas
+            e atendimento na área de estética.
+          </p>
+          <div class="details">
+            <div class="detail"><span>Duração</span><b>2 meses</b></div>
+            <div class="detail"><span>Formação</span><b class="price">10.000 Kz</b></div>
+            <div class="detail"><span>Certificado</span><b class="cert">+ 5.000 Kz</b></div>
+          </div>
+          <a class="course-btn" href="#contacto">Solicitar inscrição</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPLICAÇÕES -->
+<section class="explain" id="explicacoes">
+  <div class="container explain-grid">
+
+    <div class="visual">
+      <img
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1100&q=90"
+        alt="Aluno estudando"
+        loading="lazy">
+
+      <div class="visual-badge">
+        <strong>Aprender com confiança.</strong>
+        <p>
+          Acompanhamento focado nas necessidades do aluno,
+          com explicações claras e progressivas.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <span class="tag">Apoio escolar</span>
+
+      <h2 style="font-family:Montserrat;font-size:clamp(31px,4vw,48px);margin:12px 0;">
+        Explicações para fortalecer a aprendizagem.
+      </h2>
+
+      <p style="color:var(--muted);line-height:1.75;">
+        Reforço e aperfeiçoamento para estudantes que desejam melhorar
+        competências fundamentais e avançar com mais segurança.
+      </p>
+
+      <div class="explain-list">
+
+        <div class="explain-item">
+          <div class="check">+</div>
+          <div>
+            <strong>Aperfeiçoamento de leitura e escrita</strong>
+            <p>Desenvolvimento da leitura, escrita, interpretação e comunicação.</p>
+          </div>
+        </div>
+
+        <div class="explain-item">
+          <div class="check">+</div>
+          <div>
+            <strong>Matemática — do básico ao avançado</strong>
+            <p>Conteúdos progressivos, resolução de exercícios e acompanhamento.</p>
+          </div>
+        </div>
+
+        <div class="explain-item">
+          <div class="check">+</div>
+          <div>
+            <strong>Inglês</strong>
+            <p>Acompanhamento para desenvolver bases de comunicação e compreensão.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:25px;display:flex;flex-wrap:wrap;gap:12px;">
+        <span class="btn" style="padding:12px 16px;background:rgba(244,211,107,.09);border:1px solid var(--line);color:var(--gold2);">
+          Leitura e Escrita — 4.000 Kz/mês
+        </span>
+        <span class="btn" style="padding:12px 16px;background:rgba(244,211,107,.09);border:1px solid var(--line);color:var(--gold2);">
+          Matemática — 4.000 Kz/mês
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MATERIAIS -->
+<section class="materials" id="materiais">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="tag">Material de apoio</span>
+      <h2>Materiais em PDF incluídos</h2>
+      <p>
+        Os participantes têm direito aos materiais digitais em PDF
+        disponibilizados para a formação. Quem preferir o material
+        impresso poderá solicitar a versão física mediante valor adicional.
+      </p>
+    </div>
+
+    <div class="material-grid">
+
+      <div class="material-card">
+        <div class="material-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M5 3h10l4 4v14H5V3Z"/><path d="M15 3v5h4"/><path d="M8 13h8M8 17h6"/>
+          </svg>
+        </div>
+        <h3>Materiais digitais</h3>
+        <p>
+          Apostilas, resumos, fichas e conteúdos preparados
+          para acompanhar as aulas.
+        </p>
+        <b>Incluídos em PDF</b>
+      </div>
+
+      <div class="material-card">
+        <div class="material-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M4 5a2 2 0 0 1 2-2h14v17H6a2 2 0 0 0-2 2V5Z"/>
+            <path d="M4 19c0-1.1.9-2 2-2h14"/><path d="M8 7h8M8 11h8"/>
+          </svg>
+        </div>
+        <h3>Material por formação</h3>
+        <p>
+          Conteúdos organizados de acordo com a formação
+          ou explicação frequentada.
+        </p>
+        <b>Material de apoio</b>
+      </div>
+
+      <div class="material-card">
+        <div class="material-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+            <path d="M6 14h12v7H6z"/>
+          </svg>
+        </div>
+        <h3>Material físico</h3>
+        <p>
+          Impressão, encadernação ou outros formatos físicos
+          poderão ter um valor adicional.
+        </p>
+        <b>Valor adicional</b>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VANTAGENS -->
+<section id="vantagens">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="tag">Porquê Fely e Amigos?</span>
+      <h2>Uma experiência de aprendizagem pensada para si.</h2>
+      <p>
+        Um ambiente pensado para transformar conhecimento em confiança,
+        competência e novas possibilidades.
+      </p>
+    </div>
+
+    <div class="why">
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M3 10.5 12 5l9 5.5-9 5-9-5Z"/><path d="M7 13v4.5c2.8 2.2 9.2 2.2 12 0V13"/>
+          </svg>
+        </div>
+        <h3>Formação prática</h3>
+        <p>Conteúdos apresentados de forma clara e aplicável.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="12" cy="8" r="3"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M19 4v4M17 6h4"/>
+          </svg>
+        </div>
+        <h3>Acompanhamento</h3>
+        <p>Orientação durante o processo de aprendizagem.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/>
+            <path d="M4 19c0-1.1.9-2 2-2h14"/>
+          </svg>
+        </div>
+        <h3>Materiais em PDF</h3>
+        <p>Material digital para facilitar a revisão fora da sala.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M12 3v18M5 8l7-5 7 5-7 5-7-5Z"/><path d="M5 16l7 5 7-5"/>
+          </svg>
+        </div>
+        <h3>Novas oportunidades</h3>
+        <p>Invista em competências para apoiar os seus próximos passos.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <span class="tag">O seu próximo passo começa aqui</span>
+      <h2>Invista no conhecimento. Construa novas possibilidades.</h2>
+      <p>
+        Escolha uma formação ou explicação e fale connosco para confirmar
+        a turma, horários, vagas e condições de inscrição.
+      </p>
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/244948138785?text=Ol%C3%A1%2C%20Fely%20e%20Amigos.%20Gostaria%20de%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20e%20explica%C3%A7%C3%B5es."
+        target="_blank"
+        rel="noopener">
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="tag">Inscrições e informações</span>
+      <h2>Fale connosco</h2>
+      <p>
+        Entre em contacto para confirmar horários, disponibilidade,
+        calendário, materiais físicos e detalhes das turmas.
+      </p>
+    </div>
+
+    <div class="contact">
+
+      <div class="contact-card">
+        <h3>Local das atividades</h3>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>
+            </svg>
+          </div>
+          <div>
+            <b>Colégio Ramo Verde</b>
+            <span>Formações e explicações aos finais de semana</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9h18"/>
+            </svg>
+          </div>
+          <div>
+            <b>Finais de semana</b>
+            <span>Horários definidos conforme a organização das turmas</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="8"/>
+            </svg>
+          </div>
+          <div>
+            <b>Fely e Amigos</b>
+            <span>Formação & Explicações</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="contact-card">
+        <h3>Inscrições pelo WhatsApp</h3>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M20 11.5A8.5 8.5 0 0 1 7.3 19L3 20l1.1-4.1A8.5 8.5 0 1 1 20 11.5Z"/>
+              <path d="M8.5 8.5c.3-.7.6-.7 1-.7h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.6.7c-.1.2-.1.3 0 .5.5.9 1.2 1.6 2.1 2.1.2.1.3.1.5 0l.7-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.5c0 .4 0 .7-.7 1-1 .4-2.4-.1-4.2-1.7-1.8-1.6-3-3.3-3.3-4.8Z"/>
+            </svg>
+          </div>
+          <div>
+            <b>WhatsApp</b>
+            <span class="whatsapp-number">948 138 785</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M5 3h14v18H5z"/><path d="M8 7h8M8 11h8M8 15h5"/>
+            </svg>
+          </div>
+          <div>
+            <b>Materiais em PDF</b>
+            <span>Disponibilizados conforme cada formação/atividade</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M4 4h16v16H4z"/><path d="M7 12h10M12 7v10"/>
+            </svg>
+          </div>
+          <div>
+            <b>Material físico</b>
+            <span>Impressão e encadernação com valor adicional</span>
+          </div>
+        </div>
+
+        <a
+          class="btn btn-primary"
+          style="width:100%;margin-top:15px;"
+          href="https://wa.me/244948138785?text=Ol%C3%A1%2C%20Fely%20e%20Amigos.%20Quero%20fazer%20uma%20inscri%C3%A7%C3%A3o."
+          target="_blank"
+          rel="noopener">
+          Enviar mensagem no WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer">
+    <div>
+      <strong>Fely e Amigos</strong>
+      <small style="display:block;margin-top:4px;">Formação & Explicações</small>
+    </div>
+    <small>
+      © 2026 Fely e Amigos · <span class="gold">Conhecimento que transforma.</span>
+    </small>
+  </div>
+</footer>
+
+</body>
+</html>
